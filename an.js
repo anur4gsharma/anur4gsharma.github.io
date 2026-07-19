@@ -11,6 +11,21 @@ document.addEventListener('DOMContentLoaded', function () {
         root.setAttribute('data-theme', 'light');
     }
 
+    // ===== GitHub Contributions Graph =====
+    function renderGitHubGraph() {
+        if (window.GitHubGraph) {
+            const isLight = root.getAttribute('data-theme') === 'light';
+            GitHubGraph.render({
+                username: "anur4gsharma",
+                target: "#gh-graph",
+                theme: isLight ? "light" : "dark"
+            });
+        }
+    }
+
+    // Initial render
+    renderGitHubGraph();
+
     toggle.addEventListener('click', function () {
         const isLight = root.getAttribute('data-theme') === 'light';
         if (isLight) {
@@ -20,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
             root.setAttribute('data-theme', 'light');
             localStorage.setItem('theme', 'light');
         }
+        renderGitHubGraph();
     });
 
     // ===== Scroll Fade-In for Sections =====
