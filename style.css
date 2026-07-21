@@ -21,8 +21,7 @@
     --accent-hover: #a3b0ff;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-    --dot-color: rgba(255, 255, 255, 0.18);
-    --spotlight-color: rgba(124, 140, 248, 0.06);
+
 }
 
 /* ===== Light Theme ===== */
@@ -38,8 +37,7 @@
     --text-muted: #888;
     --accent: #5b6abf;
     --accent-hover: #4a58a8;
-    --dot-color: rgba(0, 0, 0, 0.12);
-    --spotlight-color: rgba(91, 106, 191, 0.05);
+
 }
 
 html {
@@ -49,17 +47,35 @@ html {
 
 body {
     font-family: var(--font-body);
-    background-color: var(--bg);
-    background-image:
-        radial-gradient(circle at 50% 0%, var(--spotlight-color), transparent 60%),
-        radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
-    background-size: 100% 100%, 22px 22px;
-    background-position: top center, 0 0;
+    background: var(--bg);
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.5px, transparent 1.5px);
+    background-size: 26px 26px;
+}
+
+[data-theme="light"] body::before {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1.5px, transparent 1.5px);
+}
+
+nav,
+#hero,
+section,
+footer {
+    position: relative;
+    z-index: 1;
 }
 
 /* ===== Navigation ===== */
