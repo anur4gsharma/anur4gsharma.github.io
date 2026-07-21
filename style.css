@@ -8,10 +8,10 @@
 }
 
 :root {
-    --bg: #0e0e0e;
-    --bg-card: rgba(20, 20, 20, 0.85);
-    --bg-card-hover: rgba(30, 30, 30, 0.92);
-    --bg-nav: rgba(14, 14, 14, 0.7);
+    --bg: #0a0a0c;
+    --bg-card: rgba(20, 20, 20, 0.65);
+    --bg-card-hover: rgba(30, 30, 30, 0.75);
+    --bg-nav: rgba(10, 10, 12, 0.7);
     --border: rgba(255, 255, 255, 0.08);
     --border-hover: rgba(255, 255, 255, 0.15);
     --text: #e8e8e8;
@@ -21,13 +21,15 @@
     --accent-hover: #a3b0ff;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    --dot-color: rgba(255, 255, 255, 0.06);
+    --spotlight-color: rgba(124, 140, 248, 0.04);
 }
 
 /* ===== Light Theme ===== */
 [data-theme="light"] {
     --bg: #f8f8f8;
-    --bg-card: rgba(255, 255, 255, 0.85);
-    --bg-card-hover: rgba(245, 245, 245, 0.95);
+    --bg-card: rgba(255, 255, 255, 0.65);
+    --bg-card-hover: rgba(245, 245, 245, 0.75);
     --bg-nav: rgba(248, 248, 248, 0.75);
     --border: rgba(0, 0, 0, 0.08);
     --border-hover: rgba(0, 0, 0, 0.15);
@@ -36,6 +38,8 @@
     --text-muted: #888;
     --accent: #5b6abf;
     --accent-hover: #4a58a8;
+    --dot-color: rgba(0, 0, 0, 0.04);
+    --spotlight-color: rgba(91, 106, 191, 0.03);
 }
 
 html {
@@ -45,12 +49,17 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--bg);
+    background-color: var(--bg);
+    background-image: 
+        radial-gradient(circle at 50% 0%, var(--spotlight-color), transparent 60%),
+        radial-gradient(var(--dot-color) 1px, transparent 1px);
+    background-size: 100% 100%, 24px 24px;
+    background-attachment: fixed;
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
-    transition: background 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* ===== Navigation ===== */
@@ -265,6 +274,8 @@ section {
 
 .skill-card {
     background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 1.5rem;
@@ -311,6 +322,8 @@ section {
     display: block;
     text-decoration: none;
     background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 1.5rem;
@@ -364,6 +377,8 @@ section {
 
 #gh-graph {
     background: var(--bg-card);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
     border-radius: 10px;
     padding: 2rem;
