@@ -67,7 +67,7 @@ body::before {
 }
 
 [data-theme="light"] body::before {
-    background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1.5px, transparent 1.5px);
+    background-image: radial-gradient(rgba(0, 0, 0, 0.18) 1.5px, transparent 1.5px);
 }
 
 nav,
@@ -92,8 +92,8 @@ nav {
     background: var(--bg-nav);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    border-bottom: 1px solid var(--border);
-    transition: background 0.3s ease, border-color 0.3s ease;
+    border-bottom: none;
+    transition: background 0.3s ease;
 }
 
 .nav-logo {
@@ -126,7 +126,7 @@ nav {
 /* ===== Theme Toggle ===== */
 .theme-toggle {
     background: none;
-    border: 1px solid var(--border);
+    border: none;
     border-radius: 50%;
     width: 36px;
     height: 36px;
@@ -180,12 +180,12 @@ nav {
     height: 90px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid var(--border);
-    transition: border-color 0.3s ease;
+    border: none;
+    transition: transform 0.3s ease;
 }
 
 .profile-pic-wrapper:hover {
-    border-color: var(--accent);
+    transform: scale(1.05);
 }
 
 .profile-pic {
@@ -206,6 +206,7 @@ nav {
     font-weight: 600;
     letter-spacing: -0.03em;
     color: var(--text);
+    text-transform: lowercase;
 }
 
 .tagline {
@@ -229,7 +230,7 @@ nav {
     width: 34px;
     height: 34px;
     border-radius: 50%;
-    border: 1px solid var(--border);
+    border: none;
     color: var(--text-secondary);
     text-decoration: none;
     transition: all 0.25s ease;
@@ -237,7 +238,6 @@ nav {
 
 .social-link:hover {
     color: var(--accent);
-    border-color: var(--accent);
     background: rgba(124, 140, 248, 0.08);
     transform: translateY(-2px);
 }
@@ -260,11 +260,11 @@ section {
     font-size: 0.9rem;
     font-weight: 500;
     letter-spacing: 0.08em;
-    text-transform: uppercase;
+    text-transform: lowercase;
     color: var(--accent);
     margin-bottom: 2rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border);
+    padding-bottom: 0;
+    border-bottom: none;
 }
 
 /* ===== About ===== */
@@ -292,7 +292,7 @@ section {
     background: var(--bg-card);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border);
+    border: none;
     border-radius: 10px;
     padding: 1.5rem;
     transition: all 0.25s ease;
@@ -307,7 +307,7 @@ section {
     font-size: 0.75rem;
     font-weight: 500;
     letter-spacing: 0.05em;
-    text-transform: uppercase;
+    text-transform: lowercase;
     color: var(--accent);
     margin-bottom: 1rem;
 }
@@ -321,7 +321,7 @@ section {
     color: var(--text);
     padding: 0.3rem 0;
     font-weight: 300;
-    border-bottom: 1px solid var(--border);
+    border-bottom: none;
 }
 
 .skill-card li:last-child {
@@ -340,7 +340,7 @@ section {
     background: var(--bg-card);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border);
+    border: none;
     border-radius: 10px;
     padding: 1.5rem;
     transition: all 0.25s ease;
@@ -380,7 +380,7 @@ section {
     font-family: var(--font-mono);
     font-size: 0.65rem;
     color: var(--accent);
-    border: 1px solid var(--border);
+    border: none;
     border-radius: 4px;
     padding: 0.15rem 0.45rem;
     margin-right: 0.35rem;
@@ -395,7 +395,7 @@ section {
     background: var(--bg-card);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--border);
+    border: none;
     border-radius: 10px;
     padding: 2rem;
     transition: all 0.25s ease;
@@ -492,7 +492,7 @@ section {
 
 /* ===== Footer ===== */
 footer {
-    border-top: 1px solid var(--border);
+    border-top: none;
     padding: 2rem 3rem;
     transition: border-color 0.3s ease;
 }
