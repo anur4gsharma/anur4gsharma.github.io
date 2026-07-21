@@ -21,8 +21,8 @@
     --accent-hover: #a3b0ff;
     --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
-    --dot-color: rgba(255, 255, 255, 0.06);
-    --spotlight-color: rgba(124, 140, 248, 0.04);
+    --dot-color: rgba(255, 255, 255, 0.18);
+    --spotlight-color: rgba(124, 140, 248, 0.06);
 }
 
 /* ===== Light Theme ===== */
@@ -38,8 +38,8 @@
     --text-muted: #888;
     --accent: #5b6abf;
     --accent-hover: #4a58a8;
-    --dot-color: rgba(0, 0, 0, 0.04);
-    --spotlight-color: rgba(91, 106, 191, 0.03);
+    --dot-color: rgba(0, 0, 0, 0.12);
+    --spotlight-color: rgba(91, 106, 191, 0.05);
 }
 
 html {
@@ -50,11 +50,11 @@ html {
 body {
     font-family: var(--font-body);
     background-color: var(--bg);
-    background-image: 
+    background-image:
         radial-gradient(circle at 50% 0%, var(--spotlight-color), transparent 60%),
-        radial-gradient(var(--dot-color) 1px, transparent 1px);
-    background-size: 100% 100%, 24px 24px;
-    background-attachment: fixed;
+        radial-gradient(circle, var(--dot-color) 1px, transparent 1px);
+    background-size: 100% 100%, 22px 22px;
+    background-position: top center, 0 0;
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
