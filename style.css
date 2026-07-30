@@ -524,11 +524,13 @@ section.visible .section-container,
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: 8px;
     color: var(--text-secondary);
     transition: color 0.25s ease;
     flex-shrink: 0;
     z-index: 110;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .hamburger:hover {
@@ -567,6 +569,7 @@ section.visible .section-container,
         align-items: center;
         justify-content: center;
         order: 3;
+        margin-left: 0.25rem;
     }
 
     .nav-logo {
