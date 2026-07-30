@@ -582,7 +582,7 @@ section.visible .section-container,
 
     .nav-links {
         position: fixed;
-        top: 0;
+        top: 56px;
         left: 0;
         right: 0;
         bottom: 0;
