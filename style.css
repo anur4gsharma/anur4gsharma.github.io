@@ -566,16 +566,18 @@ section.visible .section-container,
         display: flex;
         align-items: center;
         justify-content: center;
-        order: 1;
+        order: 3;
     }
 
     .nav-logo {
         order: 0;
+        flex: 1;
     }
 
     .theme-toggle {
         order: 2;
         margin-left: auto;
+        margin-right: 0.5rem;
     }
 
     .nav-links {
